@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 
-resource "aws_instance" "ec2_example" {
+resource "aws_instance" "ec2_example_01" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id = aws_subnet.subnet_aws.id
