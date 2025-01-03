@@ -9,6 +9,7 @@ resource "aws_instance" "ec2_example_01" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id = aws_subnet.subnet_aws.id
+  security_groups = [ aws_security_group.security_group.id ]
   key_name = var.key_name
 
   tags = {
