@@ -10,7 +10,7 @@ variable "instance_type" {
 
 variable "instance_name" {
   description = "Name of the EC2 instance"
-  default     = "my-ec2"
+  default     = "my-ec2_01"
 }
 
 variable "cidr_vpc" {
