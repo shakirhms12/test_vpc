@@ -69,10 +69,10 @@ resource "aws_iam_instance_profile" "ec2_profile" {
   role = aws_iam_role.ec2_role.name
 }
 
-# 7️⃣ Reference an existing EC2 instance to avoid destruction
-data "aws_instance" "existing_instance" {
-  instance_id = var.existing_instance_id
-}
+# # 7️⃣ Reference an existing EC2 instance to avoid destruction
+# data "aws_instance" "existing_instance" {
+#   instance_id = var.existing_instance_id
+# }
 
 # 8️⃣ Attach the IAM instance profile to the existing EC2 instance
 resource "aws_instance" "ec2_example_01" {
