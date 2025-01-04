@@ -27,7 +27,7 @@ resource "aws_instance" "ec2_example_01" {
   ebs_block_device {
     device_name           = "/dev/sdh"       # Device name for the additional volume
     volume_type           = "gp2"            # General Purpose SSD (covered under free tier)
-    volume_size           = 15               # Size in GB (within free tier limits for a total of 28 GB)
+    volume_size           = 10               # Size in GB (within free tier limits for a total of 28 GB)
     delete_on_termination = true             # Delete the volume on instance termination
   }
 
