@@ -16,12 +16,12 @@ resource "aws_instance" "ec2_example_01" {
   }
 
   # Additional EBS data disk (optional)
-  ebs_block_device {
-    device_name           = "/dev/sdh"
-    volume_type           = "gp2"
-    volume_size           = 10
-    delete_on_termination = true
-  }
+  # ebs_block_device {
+  #   device_name           = "/dev/sdh"
+  #   volume_type           = "gp2"
+  #   volume_size           = 10
+  #   delete_on_termination = true
+  # }
 
   lifecycle {
     ignore_changes = [
