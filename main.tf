@@ -35,3 +35,16 @@ resource "aws_instance" "ec2_example_01" {
   }
 }
 
+
+resource "aws_ebs_volume" "extra_volume" {
+  availability_zone = var.availability_zone
+  size              = 10
+  type              = "gp2"
+}
+
+resource "aws_volume_attachment" "attach_volume" {
+  device_name = "/dev/xvdh"
+  volume_id   = aws_ebs_volume.extra_volume.id
+  instance_id = aws_instance.ec2_example_01.id
+}
+
