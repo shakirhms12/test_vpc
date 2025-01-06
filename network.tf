@@ -1,4 +1,4 @@
-resource "aws_vpc" "my_vpc" {
+resource "aws_vpc" "vpc" {
   cidr_block       = var.cidr_vpc
   instance_tenancy = "default"
   enable_dns_support = true
@@ -9,11 +9,11 @@ resource "aws_vpc" "my_vpc" {
 }
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.my_vpc.id
+  vpc_id = aws_vpc.vpc.id
 }
 
 resource "aws_route_table" "rtb" {
-  vpc_id = aws_vpc.my_vpc.id
+  vpc_id = aws_vpc.vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -22,7 +22,7 @@ resource "aws_route_table" "rtb" {
 }
 
 resource "aws_subnet" "subnet_aws" {
-  vpc_id     = aws_vpc.my_vpc.id
+  vpc_id     = aws_vpc.vpc.id
   cidr_block = var.cidr_subnet
   map_public_ip_on_launch = true            #Enable public IP assignment on launch.
   availability_zone = var.availability_zone

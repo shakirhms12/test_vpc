@@ -8,7 +8,7 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "instance_name" {
+variable "tags" {
   description = "Name of the EC2 instance"
   default     = "my-ec2-01"
 }

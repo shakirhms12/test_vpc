@@ -12,7 +12,7 @@ resource "aws_instance" "ec2_example_01" {
   key_name      = var.key_name
 
   tags = {
-    Name = var.instance_name
+    Name = var.tags
   }
 
   # Additional EBS data disk (optional)
