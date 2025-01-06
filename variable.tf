@@ -10,7 +10,7 @@ variable "instance_type" {
 
 variable "tags" {
   description = "Name of the EC2 instance"
-  default     = "my-ec2-01"
+  default     = "compute"
 }
 
 variable "cidr_vpc" {
