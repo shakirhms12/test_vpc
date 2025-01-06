@@ -6,6 +6,9 @@ resource "aws_vpc" "vpc" {
   tags = {
     Name = "my_vpc"
   }
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
 
 resource "aws_internet_gateway" "igw" {
@@ -29,6 +32,9 @@ resource "aws_subnet" "subnet_aws" {
   
   tags = {
     Name = "my_subnet"
+  }
+  lifecycle {
+    ignore_changes = [tags]
   }
 }
 
